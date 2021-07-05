@@ -1,0 +1,22 @@
+<br>
+<div class="row">
+    <div class="col-sm-8 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h4 style="text-align: center;">Profil</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input readonly type="text" id="email" class="form-control" [(ngModel)]="currentUser.email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="userName">Nom</label>
+                        <input type="text" id="userName" class="form-control" [(ngModel)]="currentUser.userName" name="userName">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Modifier</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

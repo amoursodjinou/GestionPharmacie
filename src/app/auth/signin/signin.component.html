@@ -1,0 +1,26 @@
+<br>
+<br>
+<div class="row">
+    <div class="col-sm-4 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h4 style="text-align: center;">Connexion</h4>
+                <div class="alert alert-danger" *ngIf="erreur==1">
+                    <strong>Email ou mot de passe erronés..</strong>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input type="text" id="email" class="form-control" [(ngModel)]="user.email" name="email"
+                            placeholder="adressmail@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" class="form-control" [(ngModel)]="user.password" name="password" required>
+                    </div><br>
+                    <button type="submit" class="btn btn-primary" (click)="onLoggedin()">Enrégistrer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

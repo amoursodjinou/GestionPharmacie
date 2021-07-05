@@ -1,0 +1,37 @@
+<br>
+<div class="row">
+    <div class="col-sm-8 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h4 style="text-align: center;">Modification d'information</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="userId">ID Utilisateur</label>
+                        <input readonly type="text" id="userId" class="form-control" [(ngModel)]="currentUser.userId" name="userId">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input readonly type="text" id="email" class="form-control" [(ngModel)]="currentUser.email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="userName">Nom</label>
+                        <input type="text" id="userName" class="form-control" [(ngModel)]="currentUser.userName" name="userName">
+                    </div>
+                    <div hidden class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" class="form-control" [(ngModel)]="currentUser.password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Statut</label>
+                        <select id="status" class="form-control" [(ngModel)]="currentUser.status" name="status">
+                            <option value="User" selected>User</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" (click)="updateUser()">Modifier</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

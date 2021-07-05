@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Modifier un produit</h2>
+    
+    <form>
+
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">N°: </label>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <input type="number" [(ngModel)]="currentProduit.idProd" name="idProd" class="form-control" placeholder="1">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Libellé:</label>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <input type="text" [(ngModel)]="currentProduit.libelleProd" name="libelleProd" class="form-control" placeholder="Bendazol">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Description:</label>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <textarea class="form-control" rows="5" name="descripProd" cols="30" rows="5"
+                    [(ngModel)]="currentProduit.descripProd"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Prix: </label>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <input type="number" name="prixProd" [(ngModel)]="currentProduit.prixProd" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Quantité: </label>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <input type="number" [(ngModel)]="currentProduit.qteProd" name="qteProd" class="form-control"
+                    placeholder="130">
+            </div>
+        </div>
+        <div class="mt-2 " style="text-align: center;">
+            <button type="submit" class="btn btn-success" (click)="updateProduit()" >Modifier</button>
+        </div>
+    </form>
+</div>

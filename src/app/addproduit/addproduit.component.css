@@ -1,0 +1,22 @@
+form div[class*='col-']{
+    display: flex;
+    padding: 10px;
+}
+
+form div[class*='col-'] input, textarea{
+    margin-left: 20px;
+ 
+}
+
+form[_ngcontent-cdh-c50] div[class*='col-'][_ngcontent-cdh-c50] input[_ngcontent-cdh-c50], textarea[_ngcontent-cdh-c50] {
+    margin-left: 0px!important;
+}
+
+.container{
+    border: 3px solid darkgrey;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+

@@ -1,0 +1,39 @@
+<br>
+<div class="row">
+    <div class="col-sm-8 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h4 style="text-align: center;">S'inscrire</h4>
+                <form (ngSubmit)="onSubmit(formenreg)" #formenreg="ngForm">
+                    <div class="form-group">
+                        <label for="userId">ID Utilisateur</label>
+                        <input type="text" id="userId" class="form-control" [(ngModel)]="newUser.userId" name="userId">
+                    </div>
+                    <div class="form-group">
+                        <label for="userName">Nom</label>
+                        <input type="text" id="userName" class="form-control" [(ngModel)]="newUser.userName" name="userName"
+                            placeholder="SODJINOU Amour" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input type="text" id="email" class="form-control" [(ngModel)]="newUser.email" name="email"
+                            placeholder="adressmail@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" class="form-control" [(ngModel)]="newUser.password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Statut</label>
+                        <select id="status" class="form-control" [(ngModel)]="newUser.status" name="status" required>
+                            <option value="User">User</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" (click)="addUser()" [disabled]="formenreg.invalid">Enrégistrer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

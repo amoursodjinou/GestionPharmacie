@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">GestPharma</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+                <li class="nav-item dropdown" routerLinkActive="active">
+                    <a class="nav-link dropdown-toggle" routerLink="listproduit" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Produits
+                    </a>
+                    <ul *ngIf="authService.isAdmin()" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="addproduit">Ajouter</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown" routerLinkActive="active">
+                    <a *ngIf="authService.isAdmin()" class="nav-link dropdown-toggle" routerLink="user-list" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Utilisateur
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li routerLinkActive="active"><a class="dropdown-item" routerLink="auth/signup"> <i class="fa fa-user-plus" aria-hidden="true"></i> Ajouter</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown" style="position: fixed; right: 20px;"  routerLinkActive="active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i> {{authService.loggedUser}}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li routerLinkActive="active"><a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink="auth/signin"> <i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a></li>
+                        <li routerLinkActive="active"><a *ngIf="authService.isloggedIn" class="dropdown-item" style="cursor:pointer" (click) = "onLogout()"> <i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a></li>
+                        <li routerLinkActive="active"><a *ngIf="authService.isloggedIn" class="dropdown-item" [routerLink]="['/userprofile',currentUser.userId]"> <i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
